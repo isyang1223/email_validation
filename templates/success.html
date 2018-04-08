@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Email Validation with DB</title>
+</head>
+
+<body>
+    <table>
+       
+            <h3>Email Addresses Entered:</h3>
+        
+         {% for email in all_emails: %}
+        
+            <p>
+                {{ email['email'] }}
+                {{ email['created_at'] }}
+            </p>
+            <form action='/email/{{email["id"]}}' method="post">
+                <button>delete</button>
+            </form>
+             {% endfor %}
+        
+
+    </table>
+
+
+
+</body>
+
+</html>
